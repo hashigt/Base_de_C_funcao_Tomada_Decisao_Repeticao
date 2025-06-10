@@ -14,6 +14,18 @@ Se a quantidade atual em estoque estiver entre o nível mínimo ideal (10 unidad
 
 Situação 4: Estoque Muito Alto
 Se a quantidade atual em estoque for maior que o nível máximo ideal (50 unidades), o programa deve exibir: "Estoque muito alto! Considere uma promoção para girar o estoque."
+
+Descrição Resumida do Código C: Gerenciamento de Estoque com Tomada de Decisão
+Este programa em C simula um sistema de gerenciamento de estoque para um produto (como um "Smartphone Xpto"), usando tomada de decisão para recomendar ações com base nos níveis de estoque e previsão de vendas.
+
+Como funciona:
+A função sitacaoEstoque avalia a quantidade atual em estoque e a previsão de vendas.
+Ela emite diferentes recomendações:
+Pedido grande: Se o estoque for inferior a 10 unidades.
+Promoção: Se o estoque for superior a 50 unidades.
+Pedido médio: Se o estoque estiver entre 10 e 50, mas a previsão de vendas for maior que o estoque.
+Sem reabastecimento: Se o estoque estiver entre 10 e 50 e for suficiente para a previsão de vendas.
+No main, o programa solicita a quantidade em estoque e a previsão de vendas, chama a função para obter a recomendação e, em seguida, exibe os dados informados para confirmação.
 */
 
 void sitacaoEstoque(int estoque,int vendaProx){

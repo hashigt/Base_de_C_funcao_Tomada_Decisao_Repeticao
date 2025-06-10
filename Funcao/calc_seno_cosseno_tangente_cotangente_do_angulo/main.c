@@ -1,20 +1,21 @@
-#include <stdio.h>
-#include <math.h>
-
 float grau_para_radiano(float angulo){
     return angulo * M_PI / 180.0;
 }
+
 float seno(float angulo){
     float radiano = grau_para_radiano(angulo);
     return sin(radiano);
 }
+
 float cosseno(float angulo){
     float radiano = grau_para_radiano(angulo);
     return cos(radiano);
 }
+
 float tangente(float angulo){
     return seno(angulo) / cosseno(angulo);
 }
+
 float cotangente(float angulo){
     return 1 / tangente(angulo);
 }

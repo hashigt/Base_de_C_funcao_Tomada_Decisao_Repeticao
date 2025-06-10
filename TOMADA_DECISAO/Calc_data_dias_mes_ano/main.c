@@ -5,7 +5,6 @@ quantidade x de dias e mostre na tela a data daqui a x dias (cuidado com as
 mudanças de mês e ano...)
 
 *******************************************************************************/
-#include <stdio.h>
 void calc_data(int dia, int mes, int ano){
     int dias,meses,mes2;
     if(dia > 30 ){

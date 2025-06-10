@@ -1,3 +1,9 @@
+/*
+Como funciona:
+A função calcMedia calcula a média de duas notas.
+A função calcMediaTotal calcula a média final da turma, dividindo a soma total das médias individuais pelo número de alunos.
+No main, o programa solicita o número de alunos na turma. Um loop for então pede as duas notas para cada aluno, calcula e exibe a média individual. As médias individuais são acumuladas para, ao final do loop, calcular e exibir a média geral da turma.
+*/
 int calcMedia(float nota1, float nota2){
     return (nota1 + nota2) / 2.0;
 }

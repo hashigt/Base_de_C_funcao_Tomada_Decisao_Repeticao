@@ -1,7 +1,3 @@
-
-// Online C compiler to run C program online
-#include <stdio.h>
-#include <math.h>
 int cria_numero(int xx, int yy){
   int numero;
   numero=xx*100+yy;

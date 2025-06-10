@@ -10,8 +10,17 @@ usuário. A entrada de dados é finalizada quando um número ≤ 0 for digitado.
 Exemplo:
 Qtd de números digitados: 2
 Percentual de números pares digitados: 50.0 %
+
+Como funciona:
+A função mostra_tabuada recebe um número inteiro e exibe sua tabuada de 1 a 10.
+A função verificar_num checa se um número é par (retornando 0 se for par, ou 1 se for ímpar, usando o operador de módulo %).
+No main, o programa entra em um loop while que continua enquanto o usuário digitar números positivos. A cada iteração:
+Ele solicita um número ao usuário.
+Chama mostra_tabuada para exibir a tabuada desse número.
+Utiliza verificar_num para contar quantos números pares foram digitados.
+Conta o total de números digitados.
+Quando o usuário digita um número negativo, o loop termina. O programa então exibe a quantidade total de números digitados e o percentual de números pares entre eles.
 *******************************************************************************/
-#include <stdio.h>
 int mostra_tabuada(int num){
     int um,dois,tres,quatro,cinco,seis,sete,oito,nove,dez;
     um=1 * num;

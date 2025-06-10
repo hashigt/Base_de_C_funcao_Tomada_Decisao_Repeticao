@@ -16,8 +16,15 @@ Seu programa deve mostrar o número do quarto do hóspede, o tipo do apartamento
 utilizadas, o valor unitário da diária, o valor total das diárias, o valor do consumo interno, o subtotal, o
 valor da taxa de serviço e o total geral.
 
+
+Como funciona:
+A função cal_diaria define o preço da diária com base no tipo de apartamento (1 a 4).
+A função taxa_consumo adiciona uma taxa de 10% ao valor do consumo interno.
+A função total_diaria calcula o custo total das diárias.
+A função taxa_diaria aplica uma taxa de serviço de 6% sobre o valor total das diárias.
+No main, o programa solicita as informações do hóspede (tipo de apartamento, número do quarto, diárias e consumo) e, em seguida, calcula e exibe detalhadamente todos os custos, incluindo o valor da diária, o total das diárias, o consumo, as taxas e o valor total geral.
+
 *******************************************************************************/
-#include <stdio.h>
 int cal_diaria(int tipo){
     if(tipo == 1){
         return 450;
