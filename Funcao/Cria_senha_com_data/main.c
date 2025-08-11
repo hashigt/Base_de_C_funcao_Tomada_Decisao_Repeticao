@@ -45,6 +45,5 @@ int main() {
     // Imprime as senhas geradas para o usuário e para a mãe, formatando a saída.
     printf("A sua senha é: %d\nA senha da sua mãe: %d", senha, senha1);
     
-    // Retorna 0 para indicar que o programa foi executado com sucesso.
     return 0;
 }

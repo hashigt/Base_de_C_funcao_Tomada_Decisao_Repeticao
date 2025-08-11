@@ -60,10 +60,11 @@ int main()
     
     // Calcula a soma dos dois ângulos e armazena em angulo3.
     angulo3=angulo1+angulo2;
+    
     // Imprime o seno e o cosseno do ângulo resultante da soma.
     printf("\n====AS SOMA DOS ANGULOS %.2f====\n",angulo3);
     printf("O seno do angulo: %.4f\nO cosseno do angulo: %.4f",seno(angulo3),cosseno(angulo3));
     
-    // Retorna 0 para indicar que o programa foi executado com sucesso.
+    
     return 0;
 }
