@@ -28,36 +28,58 @@ Sem reabastecimento: Se o estoque estiver entre 10 e 50 e for suficiente para a 
 No main, o programa solicita a quantidade em estoque e a previsão de vendas, chama a função para obter a recomendação e, em seguida, exibe os dados informados para confirmação.
 */
 
-void sitacaoEstoque(int estoque,int vendaProx){
-    if(estoque < 10){ //1: Estoque Muito Baixo
+void sitacaoEstoque(int estoque, int vendaProx){
+    // Esta função analisa o estoque e a previsão de vendas para dar uma recomendação.
+    // Ela recebe a quantidade atual no 'estoque' e a 'vendaProx' (previsão de vendas).
+    
+    if(estoque < 10){
+        // Caso 1: Estoque muito baixo.
+        // Se o estoque for menor que 10, o programa avisa que é crítico.
         printf("ATENCAO! Estoque muito baixo. E necessario fazer um pedido GRANDE de reabastecimento imediatamente!");
     }
-    else if(estoque > 50){ //4: Estoque Muito Alto
+    else if(estoque > 50){
+        // Caso 4: Estoque muito alto.
+        // Se o estoque for maior que 50, a recomendação é fazer uma promoção.
         printf("Estoque muito alto! Considere uma promocao para girar o estoque.");
     }
     else if(estoque > 10 && estoque < 50){
-        if(vendaProx > estoque){ //2: Estoque Adequado, mas Abaixo da Previsão de Vendas
-        printf("Estoque em nivel razoavel, mas a previsao de vendas e alta. Considere fazer um pedido MEDIO de reabastecimento.");
+        // Casos 2 e 3: Estoque em um nível razoável (entre 11 e 49).
+        // A lógica entra neste bloco para avaliar a previsão de vendas.
+        
+        if(vendaProx > estoque){
+            // Caso 2: Estoque adequado, mas abaixo da previsão de vendas.
+            // Se o estoque atual for menor que a previsão de vendas, a sugestão é reabastecer.
+            printf("Estoque em nivel razoavel, mas a previsao de vendas e alta. Considere fazer um pedido MEDIO de reabastecimento.");
         }
-        else{ //3: Estoque Adequado e Suficiente para as Vendas
+        else{
+            // Caso 3: Estoque adequado e suficiente para as vendas.
+            // Se o estoque for maior ou igual à previsão de vendas, não é preciso reabastecer.
             printf("Estoque em nivel adequado. Nao e necessario reabastecimento no momento.");
         }
     }
-    
+
 }
+
 int main()
 {
-    int estoque,vendaProx; // lembrar de identificar variaveis
+    // Declara variáveis para armazenar a quantidade em estoque e a previsão de vendas.
+    int estoque, vendaProx;
 
+    // Pergunta ao usuário a quantidade atual do produto em estoque.
     printf("Qual e a quantidade atual em estoque de Smartphone Xpto?");
     scanf("%i", &estoque);
 
+    // Pergunta ao usuário a previsão de vendas para a próxima semana.
     printf("Qual e a previsao de vendas para a proxima semana?");
-    scanf("%i", &vendaProx); //guardando na variavel
-    
+    scanf("%i", &vendaProx);
 
-    sitacaoEstoque(estoque,vendaProx); // chamando a função
-    printf("\nQuantidade atual no estoque: %i",estoque);
-    printf("\nPrevisao de vendas para proxima semana: %i",vendaProx);
+    // Chama a função 'sitacaoEstoque', passando os valores lidos.
+    // A função irá analisar os dados e imprimir a recomendação diretamente.
+    sitacaoEstoque(estoque, vendaProx);
+    
+    // Imprime os dados que foram lidos do usuário para confirmação.
+    printf("\nQuantidade atual no estoque: %i", estoque);
+    printf("\nPrevisao de vendas para proxima semana: %i", vendaProx);
+    
     return 0;
 }

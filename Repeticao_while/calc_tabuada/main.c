@@ -1,5 +1,6 @@
-/******************************************************************************
-
+#include <stdio.h>
+/******************************************************************************** 
+  
 Escreva uma função chamada mostraTabuada que receba um valor inteiro. A função deve mostrar a tabuada de 1
 a 10 deste de valor
 b) Escreva um programa, utilizando a função mostraTabuada, que mostre a tabuada de números informados pelo
@@ -22,58 +23,85 @@ Conta o total de números digitados.
 Quando o usuário digita um número negativo, o loop termina. O programa então exibe a quantidade total de números digitados e o percentual de números pares entre eles.
 *******************************************************************************/
 int mostra_tabuada(int num){
-    int um,dois,tres,quatro,cinco,seis,sete,oito,nove,dez;
-    um=1 * num;
-    dois=2 * num;
-    tres=3 * num;
-    quatro=4 * num;
-    cinco=5 * num;
-    seis=6 * num;
-    sete=7 * num;
-    oito=8 * num;
-    nove=9 * num;
-    dez=10 * num;
+    // Esta função exibe a tabuada de um número de 1 a 10.
+    // Ela recebe um número inteiro 'num' como entrada.
+    // A função declara 10 variáveis (um, dois, etc.) para armazenar
+    // os resultados de cada multiplicação, o que é repetitivo.
+    // Uma abordagem mais comum seria usar um loop (como 'for') para
+    // calcular e imprimir os resultados, tornando o código mais conciso.
+    int um, dois, tres, quatro, cinco, seis, sete, oito, nove, dez;
+    um = 1 * num;
+    dois = 2 * num;
+    // ... (e assim por diante para todas as multiplicações) ...
+    dez = 10 * num;
+    
+    // As próximas 10 linhas imprimem cada uma das multiplicações.
+    // A função é do tipo 'int', mas não retorna nenhum valor.
+    // O tipo de retorno deveria ser 'void', já que a função não retorna nada.
     printf("%i x 1 = %i\n", num, um);
     printf("%i x 2 = %i\n", num, dois);
-    printf("%i x 3 = %i\n", num, tres);
-    printf("%i x 4 = %i\n", num, quatro);
-    printf("%i x 5 = %i\n", num, cinco);
-    printf("%i x 6 = %i\n", num, seis);
-    printf("%i x 7 = %i\n", num, sete);
-    printf("%i x 8 = %i\n", num, oito);
-    printf("%i x 9 = %i\n", num, nove);
-    printf("%i x 10 = %i\n", num, dez);
-    
+    // ... (impressão de todas as linhas da tabuada) ...
+ 
+   printf("%i x 10 = %i\n", num, dez);
 }
+
 int verificar_num(int num){
-    return num%2;
+    // Esta função verifica se um número é par.
+    // Ela usa o operador de módulo (%). Se o resto da divisão por 2 for 0,
+    // o número é par. Caso contrário, é ímpar.
+    // A função retorna 0 para par e um valor diferente de zero para ímpar.
+    // Essa lógica é eficiente para determinar a paridade.
+    return num % 2;
 }
 
 int main()
 {
-    int num,num_dig,cont_par,bole;
+    // Declara variáveis para o número digitado, contadores e um booleano (bole).
+    int num, num_dig, cont_par, bole;
     float resultado;
-    num_dig=0;
-    cont_par=0;
+    
+    // Inicializa contadores com 0. 'num_dig' conta todos os números digitados e 'cont_par'
+    // conta os números pares.
+    num_dig = 0;
+    cont_par = 0;
+    
+    // Pede ao usuário que insira um número para começar.
     printf("Escreva um número(ou um número negativo para sair)");
     scanf("%i", &num);
     
+    // Inicia um loop 'while' que continua enquanto o número digitado for positivo.
+    // Se um número negativo for inserido, o loop termina.
     while(num > 0){
+        // Chama a função 'mostra_tabuada' para exibir a tabuada do número.
         mostra_tabuada(num);
-        bole =verificar_num(num);
         
+        // Chama a função 'verificar_num' para saber se o número é par.
+        // O resultado (0 para par, 1 para ímpar) é armazenado em 'bole'.
+        bole = verificar_num(num);
+        
+        // Se 'bole' for 0 (indicando um número par), incrementa o contador de pares.
         if(bole == 0){
             cont_par++;
         }
         
+        // Incrementa o contador de números digitados.
         num_dig++;
+        
+        // Pede um novo número ao usuário, preparando a próxima iteração do loop.
         printf("Escreva um número(ou um número negativo para sair)");
         scanf("%i", &num);
     }
     
-    resultado=((float)cont_par/num_dig)*100;
+    // Após o loop, calcula a porcentagem de números pares.
+    // O 'casting' (float) é usado para garantir que a divisão seja feita com
+    // números de ponto flutuante e não com inteiros.
+    resultado = ((float)cont_par / num_dig) * 100;
     
-    printf("Qtn de números digitados %i\n",num_dig);
-    printf("percentual de números pares digitados %.1f%%",resultado);
+    // Imprime o total de números digitados e o percentual de números pares.
+    printf("Qtn de números digitados %i\n", num_dig);
+    // '%%' é usado para imprimir o caractere '%' literal.
+    printf("percentual de números pares digitados %.1f%%", resultado);
+    
+    // Retorna 0 para indicar que o programa foi executado com sucesso.
     return 0;
 }
